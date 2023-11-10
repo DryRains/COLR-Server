@@ -4,7 +4,7 @@ The server of the service that performs the mission of eating at the local resta
 #### Development Environment
 - Framework : Springboot
 - Database : MySQL
-- Cloud Platform : AWS
+- Cloud platform : AWS
 
 
 #### Information Architecture & Wireframe : [Link(Figma)](https://www.figma.com/file/pdzB8WFmeM0OSC79yKCyJf/for_UMC?type=design&node-id=0%3A1&mode=design&t=tcHR32PPVdOOhVMH-1)
