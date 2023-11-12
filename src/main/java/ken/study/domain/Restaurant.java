@@ -53,6 +53,6 @@ public class Restaurant extends BaseEntity {
     private List<Review> reviewList = new ArrayList<>();
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
-    private List<RestaurantFood> restaurantFoodListList = new ArrayList<>();
+    private List<RestaurantFood> restaurantFoodList = new ArrayList<>();
 
 }
