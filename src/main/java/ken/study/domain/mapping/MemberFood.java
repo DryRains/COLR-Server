@@ -1,5 +1,7 @@
-package ken.study.domain;
+package ken.study.domain.mapping;
 
+import ken.study.domain.Food;
+import ken.study.domain.Member;
 import lombok.*;
 
 import javax.persistence.*;

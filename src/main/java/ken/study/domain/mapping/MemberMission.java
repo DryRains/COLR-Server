@@ -1,6 +1,8 @@
-package ken.study.domain;
+package ken.study.domain.mapping;
 
 
+import ken.study.domain.Member;
+import ken.study.domain.Mission;
 import ken.study.domain.common.BaseEntity;
 import lombok.*;
 import javax.persistence.*;

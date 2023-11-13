@@ -2,6 +2,7 @@ package ken.study.domain;
 
 import ken.study.domain.common.BaseEntity;
 import ken.study.domain.common.status.RestaurantStatus;
+import ken.study.domain.mapping.RestaurantFood;
 import lombok.*;
 
 import javax.persistence.*;

@@ -3,6 +3,7 @@ package ken.study.domain;
 import ken.study.domain.common.BaseEntity;
 import ken.study.domain.common.type.GenderType;
 import ken.study.domain.common.status.MemberStatus;
+import ken.study.domain.mapping.MemberFood;
 import lombok.*;
 
 import javax.persistence.*;
