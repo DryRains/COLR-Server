@@ -24,4 +24,15 @@ public class MemberFood {
     @JoinColumn(name = "food_id")
     private Food food;
 
+    public void setMember(Member member){
+        if(this.member != null)
+            member.getMemberFoodList().remove(this);
+        this.member = member;
+        member.getMemberFoodList().add(this);
+    }
+
+    public void setFood(Food food){
+        this.food = food;
+    }
+
 }
