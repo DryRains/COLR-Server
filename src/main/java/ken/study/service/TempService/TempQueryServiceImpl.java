@@ -1,4 +1,4 @@
-package ken.study.service;
+package ken.study.service.TempService;
 
 import ken.study.apiPayload.code.status.ErrorStatus;
 import ken.study.apiPayload.exception.handler.TempHandler;
