@@ -19,7 +19,7 @@ public class MemberRequestDTO {
         Integer gender;
         @NotNull
         LocalDate birthDate;
-        @Size(min=13, max=13)
+        @Size(min=11, max=13)
         String phoneNumber;
         @Size(min=5, max=50)
         String address;
