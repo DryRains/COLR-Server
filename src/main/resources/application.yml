@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
-      mode: never
+      mode: always
   jpa:
     properties:
       hibernate:
@@ -17,3 +17,4 @@ spring:
         hbm2ddl:
           auto: create
         default_batch_fetch_size: 1000
+    defer-datasource-initialization: true
