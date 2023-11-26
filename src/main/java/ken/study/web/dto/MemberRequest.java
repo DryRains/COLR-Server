@@ -10,9 +10,9 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.List;
 
-public class MemberRequestDTO {
+public class MemberRequest {
     @Getter
-    public static class SignUpDto{
+    public static class SignUpDTO {
         @NotBlank
         String name;
         @NotNull

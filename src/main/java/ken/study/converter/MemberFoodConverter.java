@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MemberFoodConverter {
-    public static List<MemberFood> toMemberFoodrList(List<Food> foodList) {
+    public static List<MemberFood> toMemberFoodList(List<Food> foodList) {
 
         return foodList.stream()
                 .map(food ->

@@ -9,7 +9,7 @@ import ken.study.domain.Member;
 import ken.study.domain.mapping.MemberFood;
 import ken.study.repository.FoodRepository;
 import ken.study.repository.MemberRepository;
-import ken.study.web.dto.MemberRequestDTO;
+import ken.study.web.dto.MemberRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class MemberCommandServiceImpl implements MemberCommandService {
 
     @Override
     @Transactional
-    public Member signUpMember(MemberRequestDTO.SignUpDto request) {
+    public Member signUpMember(MemberRequest.SignUpDTO request) {
 
         Member newMember = MemberConverter.toMember(request);
         List<Food> foodList = request.getPreferFoods().stream()
@@ -34,7 +34,7 @@ public class MemberCommandServiceImpl implements MemberCommandService {
                     return foodRepository.findById(category).orElseThrow(() -> new FoodHandler(ErrorStatus.FOOD_CATEGORY_NOT_FOUND));
                 }).collect(Collectors.toList());
 
-        List<MemberFood> memberFoodList = MemberFoodConverter.toMemberFoodrList(foodList);
+        List<MemberFood> memberFoodList = MemberFoodConverter.toMemberFoodList(foodList);
 
         memberFoodList.forEach(memberFood -> {memberFood.setMember(newMember);});
 

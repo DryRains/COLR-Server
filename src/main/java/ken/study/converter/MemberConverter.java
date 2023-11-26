@@ -2,21 +2,21 @@ package ken.study.converter;
 
 import ken.study.domain.Member;
 import ken.study.domain.common.type.GenderType;
-import ken.study.web.dto.MemberRequestDTO;
-import ken.study.web.dto.MemberResponseDTO;
+import ken.study.web.dto.MemberRequest;
+import ken.study.web.dto.MemberResponse;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class MemberConverter {
-    public static MemberResponseDTO.SignUpResultDTO toSignUpResultDTO(Member member){
-        return MemberResponseDTO.SignUpResultDTO.builder()
+    public static MemberResponse.SignUpResultDTO toSignUpResultDTO(Member member){
+        return MemberResponse.SignUpResultDTO.builder()
                 .memberId(member.getId())
-                .createdAt(LocalDateTime.now())
+                .createdAt(member.getCreatedAt())
                 .build();
     }
 
-    public static Member toMember(MemberRequestDTO.SignUpDto request){
+    public static Member toMember(MemberRequest.SignUpDTO request){
         GenderType gender = null;
 
         switch (request.getGender()){

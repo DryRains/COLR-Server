@@ -1,17 +1,17 @@
 package ken.study.converter;
 
-import ken.study.web.dto.TempResponseDTO;
+import ken.study.web.dto.TempResponse;
 
 public class TempConverter {
 
-    public static TempResponseDTO.TempTestDTO toTempTestDTO(){
-        return TempResponseDTO.TempTestDTO.builder()
+    public static TempResponse.TempTestDTO toTempTestDTO(){
+        return TempResponse.TempTestDTO.builder()
                 .testString("This is Test!")
                 .build();
     }
 
-    public static TempResponseDTO.TempExceptionDTO toTempExceptionDTO(Integer flag){
-        return TempResponseDTO.TempExceptionDTO.builder()
+    public static TempResponse.TempExceptionDTO toTempExceptionDTO(Integer flag){
+        return TempResponse.TempExceptionDTO.builder()
                 .flag(flag)
                 .build();
     }

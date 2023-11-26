@@ -3,9 +3,9 @@ package ken.study.apiPayload.exception.handler;
 import ken.study.apiPayload.code.BaseErrorCode;
 import ken.study.apiPayload.exception.GeneralException;
 
-public class FoodHandler extends GeneralException {
+public class RestaurantHandler extends GeneralException {
 
-   public FoodHandler(BaseErrorCode errorCode){
-       super(errorCode);
-   }
+    public RestaurantHandler(BaseErrorCode errorCode) {
+        super(errorCode);
+    }
 }
