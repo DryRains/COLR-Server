@@ -4,8 +4,8 @@ import ken.study.apiPayload.ApiResponse;
 import ken.study.converter.MemberConverter;
 import ken.study.domain.Member;
 import ken.study.service.MemberService.MemberCommandService;
-import ken.study.web.dto.MemberRequestDTO;
-import ken.study.web.dto.MemberResponseDTO;
+import ken.study.web.dto.MemberRequest;
+import ken.study.web.dto.MemberResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +22,7 @@ public class MemberController {
     private final MemberCommandService memberCommandService;
 
     @PostMapping("/signUp")
-    public ApiResponse<MemberResponseDTO.SignUpResultDTO> join(@RequestBody @Valid MemberRequestDTO.SignUpDto request){
+    public ApiResponse<MemberResponse.SignUpResultDTO> signUp(@RequestBody @Valid MemberRequest.SignUpDTO request){
         Member member = memberCommandService.signUpMember(request);
         return ApiResponse.onSuccess(MemberConverter.toSignUpResultDTO(member));
     }
