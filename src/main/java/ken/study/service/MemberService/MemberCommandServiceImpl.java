@@ -31,7 +31,7 @@ public class MemberCommandServiceImpl implements MemberCommandService {
         Member newMember = MemberConverter.toMember(request);
         List<Food> foodList = request.getPreferFoods().stream()
                 .map(category -> {
-                    return foodRepository.findById(category).orElseThrow(() -> new FoodHandler(ErrorStatus.FOOD_CATEGORY_NOT_FOUND));
+                    return foodRepository.findById(category).orElseThrow(() -> new FoodHandler(ErrorStatus.FOOD_NOT_FOUND));
                 }).collect(Collectors.toList());
 
         List<MemberFood> memberFoodList = MemberFoodConverter.toMemberFoodList(foodList);

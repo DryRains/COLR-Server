@@ -18,7 +18,6 @@ public enum ErrorStatus implements BaseErrorCode {
 
     // Member Error
     MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "MEMBER4001", "사용자가 없습니다."),
-    NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MEMBER4002", "닉네임은 필수 입니다."),
 
     // Restaurant Error
     RESTAURANT_NOT_FOUND(HttpStatus.NOT_FOUND, "RESTAURANT4001", "식당이 없습니다." ),
@@ -30,7 +29,11 @@ public enum ErrorStatus implements BaseErrorCode {
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "테스트용 임시 에러입니다."),
 
     // Food Error
-    FOOD_CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD_CATEGORY4001", "음식 카테고리가 없습니다.");
+    FOOD_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD4001", "음식 카테고리가 없습니다."),
+
+    // Mission Error
+    MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MISSION4001", "미션이 없습니다."),
+    MISSION_NOT_ACTIVE(HttpStatus.BAD_REQUEST, "MISSION4002", "이용 가능한 미션이 아닙니다.");
 
 
     private final HttpStatus httpStatus;

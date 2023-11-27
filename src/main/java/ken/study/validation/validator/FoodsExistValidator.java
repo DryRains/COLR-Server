@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FoodsExistValidator implements ConstraintValidator<ExistFoods, List<Long>> {
 
-    private final FoodQueryService foodCategoryService;
+    private final FoodQueryService foodQueryService;
 
     @Override
     public void initialize(ExistFoods constraintAnnotation) {
@@ -23,11 +23,11 @@ public class FoodsExistValidator implements ConstraintValidator<ExistFoods, List
 
     @Override
     public boolean isValid(List<Long> values, ConstraintValidatorContext context) {
-        boolean isValid = foodCategoryService.checkFoodsExist(values);
+        boolean isValid = foodQueryService.checkFoodsExist(values);
 
         if (!isValid) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus.FOOD_CATEGORY_NOT_FOUND.toString()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate(ErrorStatus.FOOD_NOT_FOUND.toString()).addConstraintViolation();
         }
 
         return isValid;
