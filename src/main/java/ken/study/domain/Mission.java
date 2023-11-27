@@ -2,9 +2,12 @@ package ken.study.domain;
 
 import ken.study.domain.common.BaseEntity;
 import ken.study.domain.common.status.MissionStatus;
+import ken.study.domain.mapping.MemberMission;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -30,5 +33,8 @@ public class Mission extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(15) DEFAULT 'PENDING'")
     private MissionStatus status;
+
+    @OneToMany(mappedBy="mission", cascade = CascadeType.ALL)
+    private List<MemberMission> memberMissionList = new ArrayList<>();
 
 }

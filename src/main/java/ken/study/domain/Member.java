@@ -4,6 +4,7 @@ import ken.study.domain.common.BaseEntity;
 import ken.study.domain.common.type.GenderType;
 import ken.study.domain.common.status.MemberStatus;
 import ken.study.domain.mapping.MemberFood;
+import ken.study.domain.mapping.MemberMission;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -67,4 +68,7 @@ public class Member extends BaseEntity {
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Inquiry> inquiryList = new ArrayList<>();
+
+    @OneToMany(mappedBy="member", cascade = CascadeType.ALL)
+    private List<MemberMission> memberMissionList = new ArrayList<>();
 }
