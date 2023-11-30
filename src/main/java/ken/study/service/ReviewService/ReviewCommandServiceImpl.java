@@ -25,6 +25,7 @@ public class ReviewCommandServiceImpl implements ReviewCommandService{
     private final RestaurantRepository restaurantRepository;
     private final MemberRepository memberRepository;
     private final ReviewRepository reviewRepository;
+
     @Override
     @Transactional
     public Review createReview(Long restaurantId, String token, ReviewRequest.CreateReviewDTO request, List<MultipartFile> images) {
@@ -32,8 +33,10 @@ public class ReviewCommandServiceImpl implements ReviewCommandService{
         Long memberId = Long.parseLong(token);
         Member member = memberRepository.findById(memberId).orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
 
+        Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
+
         Review review = ReviewConverter.toReview(request);
-        review.setRestaurant(restaurantRepository.findById(restaurantId).get());
+        review.setRestaurant(restaurant);
         review.setMember(member);
 
         //Todo : if requested images exist

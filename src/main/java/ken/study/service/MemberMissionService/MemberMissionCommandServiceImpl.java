@@ -34,7 +34,7 @@ public class MemberMissionCommandServiceImpl implements MemberMissionCommandServ
         Long memberId = Long.parseLong(token);
         Member member = memberRepository.findById(memberId).orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
 
-        Mission mission = missionRepository.findById(request.getMissionId()).orElseThrow(() -> new MissionHandler(ErrorStatus.MISSION_NOT_FOUND));
+        Mission mission = missionRepository.findById(request.getMissionId()).get();
 
         missionNotInProgressValidator.validate(member, mission);
 
