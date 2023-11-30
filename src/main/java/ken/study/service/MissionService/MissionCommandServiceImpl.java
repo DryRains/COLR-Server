@@ -28,7 +28,7 @@ public class MissionCommandServiceImpl implements MissionCommandService{
     @Override
     @Transactional
     public Mission createMission(Long restaurantId, String token, MissionRequest.CreateMissionDto request) {
-        Restaurant restaurant = restaurantRepository.findById(restaurantId).orElseThrow(() -> new RestaurantHandler(ErrorStatus.RESTAURANT_NOT_FOUND));
+        Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
 
         //(임시) token -> restaurant's owner validation
         Long ownerId = Long.parseLong(token);
