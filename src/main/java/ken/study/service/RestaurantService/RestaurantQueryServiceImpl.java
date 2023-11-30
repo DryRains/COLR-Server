@@ -15,7 +15,6 @@ public class RestaurantQueryServiceImpl implements RestaurantQueryService {
 
     @Override
     public Optional<Restaurant> findRestaurant(Long restaurantId) {
-        System.out.println("search");
         return restaurantRepository.findById(restaurantId);
     }
 }

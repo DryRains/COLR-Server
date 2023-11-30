@@ -1,7 +1,6 @@
 package ken.study.service.RestaurantService;
 
 import ken.study.domain.Restaurant;
-import ken.study.repository.RestaurantRepository;
 
 import java.util.Optional;
 
