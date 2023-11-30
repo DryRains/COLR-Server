@@ -28,15 +28,12 @@ public class ReviewCommandServiceImpl implements ReviewCommandService{
     @Override
     @Transactional
     public Review createReview(Long restaurantId, String token, ReviewRequest.CreateReviewDTO request, List<MultipartFile> images) {
-
-        Restaurant restaurant = restaurantRepository.findById(restaurantId).orElseThrow(() -> new RestaurantHandler(ErrorStatus.RESTAURANT_NOT_FOUND));
-
         //(임시) token -> member validation
         Long memberId = Long.parseLong(token);
         Member member = memberRepository.findById(memberId).orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
 
         Review review = ReviewConverter.toReview(request);
-        review.setRestaurant(restaurant);
+        review.setRestaurant(restaurantRepository.findById(restaurantId).get());
         review.setMember(member);
 
         //Todo : if requested images exist

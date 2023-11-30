@@ -17,23 +17,24 @@ public enum ErrorStatus implements BaseErrorCode {
     _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "권한이 없습니다."),
 
     // Member Error
-    MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "MEMBER4001", "사용자가 없습니다."),
+    MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "MEMBER4004", "사용자가 없습니다."),
 
     // Restaurant Error
-    RESTAURANT_NOT_FOUND(HttpStatus.NOT_FOUND, "RESTAURANT4001", "식당이 없습니다." ),
+    RESTAURANT_NOT_FOUND(HttpStatus.NOT_FOUND, "RESTAURANT4004", "식당이 없습니다." ),
 
     // Review Error
-    ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "REVIEW4001", "리뷰가 없습니다."),
+    ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "REVIEW4004", "리뷰가 없습니다."),
 
     // Test Error
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "테스트용 임시 에러입니다."),
 
     // Food Error
-    FOOD_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD4001", "음식 카테고리가 없습니다."),
+    FOOD_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD4004", "음식 카테고리가 없습니다."),
 
     // Mission Error
-    MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MISSION4001", "미션이 없습니다."),
-    MISSION_NOT_ACTIVE(HttpStatus.BAD_REQUEST, "MISSION4002", "이용 가능한 미션이 아닙니다."),
+    MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MISSION4004", "미션이 없습니다."),
+    MISSION_NOT_ACTIVE(HttpStatus.BAD_REQUEST, "MISSION4000", "이용 가능한 미션이 아닙니다."),
+    MISSION_ALREADY_IN_PROGRESS(HttpStatus.BAD_REQUEST, "MISSION4000_1", "해당 유저가 이미 진행중인 미션입니다."),
 
     // Owner Error
     OWNER_TOKEN_NOT_VALID(HttpStatus.FORBIDDEN, "OWNER4003", "인가된 가게 주인의 토큰이 아닙니다.");

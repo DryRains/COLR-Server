@@ -8,6 +8,7 @@ import ken.study.service.MemberMissionService.MemberMissionCommandService;
 import ken.study.web.dto.MemberMissionRequest;
 import ken.study.web.dto.MemberMissionResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
