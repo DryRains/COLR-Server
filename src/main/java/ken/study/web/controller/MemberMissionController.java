@@ -21,7 +21,7 @@ public class MemberMissionController {
 
    private final MemberMissionCommandService memberMissionCommandService;
 
-    @Operation(summary = "[회원] 미션 수락", description = "회원이 요청한 missionId에 해당하는 미션을 수락합니다.")
+    @Operation(summary = "[회원] 미션 수락", description = "현재 로그인한 회원이 요청한 missionId에 해당하는 미션을 수락합니다.")
     @PostMapping
     public ApiResponse<MemberMissionResponse.AcceptMissionResultDTO> acceptMission(@RequestHeader(HttpHeaders.AUTHORIZATION) String token,
                                                                                    @Valid @RequestBody MemberMissionRequest.AcceptMissionDto request){
