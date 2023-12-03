@@ -16,6 +16,10 @@ public enum ErrorStatus implements BaseErrorCode {
     _UNAUTHORIZED(HttpStatus.UNAUTHORIZED,"COMMON401","인증이 필요합니다."),
     _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "권한이 없습니다."),
 
+    // Common Error Response
+    PAGE_NUMBER_NOT_VALID(HttpStatus.BAD_REQUEST, "PAGE4000", "잘못된 페이지 번호입니다."),
+    PAGE_QUERYSTRING_NOT_EXIST(HttpStatus.BAD_REQUEST, "PAGE4000_1", "페이지 요청 쿼리스트링이 없습니다. 페이지 번호를 요청하세요."),
+
     // Member Error
     MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "MEMBER4004", "사용자가 없습니다."),
 
@@ -24,9 +28,6 @@ public enum ErrorStatus implements BaseErrorCode {
 
     // Review Error
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "REVIEW4004", "리뷰가 없습니다."),
-
-    // Test Error
-    TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "테스트용 임시 에러입니다."),
 
     // Food Error
     FOOD_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD4004", "음식 카테고리가 없습니다."),
@@ -38,6 +39,7 @@ public enum ErrorStatus implements BaseErrorCode {
 
     // Owner Error
     OWNER_TOKEN_NOT_VALID(HttpStatus.FORBIDDEN, "OWNER4003", "인가된 가게 주인의 토큰이 아닙니다.");
+
 
     private final HttpStatus httpStatus;
     private final String code;

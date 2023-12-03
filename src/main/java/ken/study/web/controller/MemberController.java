@@ -1,5 +1,6 @@
 package ken.study.web.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import ken.study.apiPayload.ApiResponse;
 import ken.study.converter.MemberConverter;
 import ken.study.domain.Member;
@@ -21,6 +22,7 @@ public class MemberController {
 
     private final MemberCommandService memberCommandService;
 
+    @Operation(summary = "회원 가입", description = "요구되는 정보들을 기입하여 회원 가입합니다.")
     @PostMapping("/signUp")
     public ApiResponse<MemberResponse.SignUpResultDTO> signUp(@RequestBody @Valid MemberRequest.SignUpDTO request){
         Member member = memberCommandService.signUpMember(request);

@@ -1,6 +1,7 @@
 package ken.study.web.controller;
 
 import com.google.common.net.HttpHeaders;
+import io.swagger.v3.oas.annotations.Operation;
 import ken.study.apiPayload.ApiResponse;
 import ken.study.converter.MissionConverter;
 import ken.study.domain.Mission;
@@ -20,6 +21,8 @@ import javax.validation.Valid;
 public class MissionController {
 
     private final MissionCommandService missionCommandService;
+
+    @Operation(summary = "[가게 주인] 미션 생성", description = "가게 주인이 자신의 특정 가게에 미션을 생성합니다.")
     @PostMapping("/restaurants/{restaurantId}/missions")
     public ApiResponse<MissionResponse.CreateMissionResultDTO> createMission(@ExistRestaurant @PathVariable("restaurantId") Long restaurantId,
                                                                              @RequestHeader(HttpHeaders.AUTHORIZATION) String token,
