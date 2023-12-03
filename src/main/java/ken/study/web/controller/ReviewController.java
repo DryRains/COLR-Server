@@ -50,7 +50,7 @@ public class ReviewController {
     @Operation(summary = "특정 가게의 리뷰 목록 조회", description = "특정 가게의 리뷰 목록을 query string을 통해 요청한 페이지별로 조회합니다.")
     @GetMapping("/restaurants/{restaurantId}/reviews")
     public ApiResponse<ReviewResponse.ReviewPreviewListDTO> retrieveReviewList(@ExistRestaurant @PathVariable("restaurantId") Long restaurantId,
-                                                                           @ValidPageNumber @RequestParam(value = "page", required = false) Integer page) {
+                                                                               @ValidPageNumber @RequestParam(value = "page", required = false) Integer page) {
         Page<Review> reviewList = reviewQueryService.retrieveReviewList(restaurantId, page-1);
         return ApiResponse.onSuccess(ReviewConverter.toReviewPreviewListDTO(reviewList));
     }
