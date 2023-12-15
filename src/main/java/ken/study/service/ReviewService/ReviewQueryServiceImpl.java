@@ -24,7 +24,7 @@ public class ReviewQueryServiceImpl implements ReviewQueryService{
 
     @Override
     public Page<Review> retrieveMyReviewList(String token, Integer page) {
-        //(임시) token -> restaurant's owner validation
+        //(임시) token -> review's writer(member) validation
         Long writerId = Long.parseLong(token);
         Member member = memberRepository.findById(writerId).orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
 
