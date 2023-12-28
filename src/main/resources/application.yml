@@ -18,3 +18,8 @@ spring:
           auto: create
         default_batch_fetch_size: 1000
     defer-datasource-initialization: true
+    server:
+      servlet:
+        multipart:
+          maxFileSize: 200MB
+          maxRequestSize: 300MB
